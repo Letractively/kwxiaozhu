@@ -157,13 +157,13 @@ END
 	invoke-rc.d mysql start
     # Generating a new password for the root user.
     passwd=`get_password root@mysql`
-    mysqladmin -uroot -p password "$passwd"
+    mysqladmin -uroot  password "$passwd"
     cat > ~/.my.cnf <<END
 [client]
 user = root
 password = $passwd
 END
-	mysql -uroot -p"$passwd" <temp.sql
+#	mysql -uroot -p"$passwd" <temp.sql
     chmod 600 ~/.my.cnf
 	invoke-rc.d mysql restart
 #setup exim4
