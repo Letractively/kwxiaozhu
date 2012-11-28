@@ -299,7 +299,7 @@ deb http://ftp.debian.org/debian squeeze main contrib non-free
 deb http://security.debian.org squeeze/updates main contrib non-free
 END
 	wget http://www.dotdeb.org/dotdeb.gpg
-	cat dotdeb.gpg | sudo apt-key add -
+	cat dotdeb.gpg | apt-key add -
 	rm -rf dotdeb.gpg
     apt-get -q -y update
     apt-get -q -y upgrade
