@@ -324,10 +324,10 @@ vhost)
     install_vhost $2
     ;;
 ssh)
-    cat >> /etc/shells <<END
-/sbin/nologin
-END
-	useradd $2 -s /sbin/nologin
+#    cat >> /etc/shells <<END
+#/bin/false
+#END
+	useradd $2 -M -s /bin/false
 	echo $2:$3 | chpasswd 
     ;;
 vsftpd)
